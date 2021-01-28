@@ -15,6 +15,17 @@ sap.ui.define([], function () {
 			}
 
 			return parseFloat(sValue).toFixed(2);
+        },
+        statusText: function (sStatus) {
+			var resourceBundle = this.getView().getModel("i18n").getResourceBundle();
+			switch (sStatus) {
+				case "3":
+					return resourceBundle.getText("invoiceStatusA");
+				case "4":
+					return resourceBundle.getText("invoiceStatusB");
+				default:
+					return sStatus;
+			}
 		}
 	};
 });

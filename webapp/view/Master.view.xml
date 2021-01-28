@@ -64,10 +64,26 @@
 						type="Navigation"
 						press=".onSelectionChange"
 						title="{Name}"
->
+                        	number="{
+				parts:[{path:'Price'},{path:'Currency'}],
+				type: 'sap.ui.model.type.Currency',
+				formatOptions: {showMeasure: false}
+			}"
+			numberUnit="{Currency}">
+            <firstStatus>
+				<ObjectStatus
+					
+					text="{
+						path: 'Status',
+						formatter: '.formatter.statusText'
+					}" />
+			</firstStatus>
+                       	<ObjectAttribute text="{Category}" />
 					</ObjectListItem>
 				</items>
 			</List>
+            
 		</semantic:content>
+        
 	</semantic:SemanticPage>
 </mvc:View>
